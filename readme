@@ -1,0 +1,9 @@
+.promise()   :=>
+
+//In simpler terms, .promise() is like a special function you can use with AWS SDK methods that helps you wait for an action to finish before moving on to the next step in your code.
+
+When you call an AWS SDK method, it starts doing something in the background, like uploading a file to Amazon S3. Instead of waiting for that action to finish, the SDK gives you a special object called a "request object."
+
+To make your code simpler and easier to understand, you can use .promise() after your AWS SDK method. This turns the "request object" into a promise, which is like a promise that something will happen in the future. You can then use await to wait for the action to finish before continuing with your code.
+
+So, .promise() is just a helpful tool that makes it easier to work with AWS SDK methods when you're writing asynchronous code.

@@ -7,6 +7,10 @@ import path = require("path");
 // import path from "path";
 import { uploadFile } from "./aws";
 //uploadFile("falguni/package.json","/Users/bhavi/Desktop/vercel/package.json");
+import { createClient } from "redis";
+const publisher = createClient();
+publisher.connect();
+
 
 
 const app = express();
@@ -29,6 +33,8 @@ app.post("/deploy",async (req,res) => {
         //extract : //output/13125512/app.js
         await uploadFile(file.slice(__dirname.length + 1),file);    //users/bhavi/vercel...../output/.. (yeh reemove ho jayega )
     })
+
+    publisher.lPush("build-queue",id);
 
     // console.log(files);
     // files.forEach(file=>{

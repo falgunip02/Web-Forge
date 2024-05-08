@@ -1,4 +1,4 @@
-.promise()   :=>
+.promise().   :=>
 
 //In simpler terms, .promise() is like a special function you can use with AWS SDK methods that helps you wait for an action to finish before moving on to the next step in your code.
 

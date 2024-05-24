@@ -30,6 +30,6 @@ export const uploadFile = async (fileName: string, localFilePath: string) => {
         Key: normalizedFileName,              // The name/key of the file in the S3 bucket
     }).promise();
 
-    // Print the response from the S3 upload operation
+    // Print the response from the S3 upload operationn
     console.log(response);
 }
